@@ -1,6 +1,6 @@
 public class SontÉgales {
 
-    public static boolean sontÉgales (int[][] P, int[][] Q){
+    public static boolean sontÉgales(int[][] P, int[][] Q) {
         if (P.length != Q.length || P[0].length != Q[0].length) {
             return false;
         }
