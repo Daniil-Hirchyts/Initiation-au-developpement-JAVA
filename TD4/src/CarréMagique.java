@@ -42,12 +42,11 @@ public class CarréMagique {
      * Résultat : affiche le tableau
      */
     public static boolean cEstUnCarréMagique(int[][] T) {
-        int n = T.length;
         int somme = constanteMagiqueDe(T);
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < T.length; i++) {
             int sommeLigne = 0;
             int sommeColonne = 0;
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < T.length; j++) {
                 sommeLigne += T[i][j];
                 sommeColonne += T[j][i];
             }
@@ -57,14 +56,11 @@ public class CarréMagique {
         }
         int sommeDiag1 = 0;
         int sommeDiag2 = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < T.length; i++) {
             sommeDiag1 += T[i][i];
-            sommeDiag2 += T[i][n - i - 1];
+            sommeDiag2 += T[i][T.length - i - 1];
         }
-        if (sommeDiag1 != somme || sommeDiag2 != somme) {
-            return false;
-        }
-        return true;
+        return sommeDiag1 == somme && sommeDiag2 == somme;
     }
 
     /**

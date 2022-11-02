@@ -32,16 +32,16 @@ public class MainTD4 {
 //        System.out.println(IlExisteUneLigneAvecPlusieursZeros.ilExisteUneLigneAvecPlusieursZeros(P));
 //        System.out.println();
 //
-        System.out.println("Class SommeDesDiagonales");
-        System.out.println(SommeDesDiagonales.sommeDesDiagonales(P));
-        System.out.println();
+//        System.out.println("Class SommeDesDiagonales");
+//        System.out.println(SommeDesDiagonales.sommeDesDiagonales(P));
+//        System.out.println();
 //
 //        System.out.println("Class SontÉgales");
 //        System.out.println(SontÉgales.sontÉgales(P, Q));
 //        System.out.println();
 
 //        System.out.println("Class CarréMagique");
-//        int[][] M = new int[13][13];
+//        int[][] M = new int[3][3];
 //        CarréMagique.remplirEnCarréMagique(M);
 //        CarréMagique.afficherCarré(M);
 //        System.out.println(CarréMagique.cEstUnCarréMagique(M));
@@ -51,11 +51,14 @@ public class MainTD4 {
 //        MatriceEnRangée.remplirCetteMatriceEnRangée(M);
 //        afficherTableau(M);
 
-
 //        System.out.println("Class MatriceEnSerpentin");
 //        int[][] N = MatriceEnSerpentin.nouvelleMatriceEnSerpentin(4);
 //        MatriceEnSerpentin.remplirCetteMatriceEnSerpentin(N);
 //        afficherTableau(N);
 
+        System.out.println("Class MatriceEnDiagonale");
+        int[][] N = MatriceEnDiagonale.nouvelleMatriceEnDiagonale(5);
+        MatriceEnDiagonale.remplirCetteMatriceEnDiagonale(N);
+        afficherTableau(N);
     }
 }
