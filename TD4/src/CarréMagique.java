@@ -70,9 +70,9 @@ public class CarréMagique {
      */
     public static void afficherCarré(int[][] carré) {
         int n = carré.length;
-        for (int i = 0; i < n; i++) {
+        for (int[] ints : carré) {
             for (int j = 0; j < n; j++) {
-                System.out.print(carré[i][j] + "\t");
+                System.out.print(ints[j] + "\t");
             }
             System.out.println();
         }
