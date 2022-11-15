@@ -59,12 +59,15 @@ public class NumérationRomaine {
         int unites = n % 10;
         int dizaines = (n / 10) % 10;
         int centaines = (n / 100) % 10;
-        int milliers = (n / 1000) % 10;
-        System.out.println(unités(unites) + " " + centaines(centaines) + " " + dizaines(dizaines) + " " + chiffreMilliers(milliers));
+//        int milliers = (n / 1000) % 10;
+        System.out.println(centaines(centaines) + " " + dizaines(dizaines)  + " " + unités(unites));
+//        + " " + chiffreMilliers(milliers)
     }
 
+
+
     public static void chiffresRomains() {
-        int n = 333;
+        int n = 487;
         afficher(n);
     }
 }

@@ -1,17 +1,19 @@
 public class IlExisteUneLigneAvecPlusieursZeros {
 
-    public static boolean ilExisteUneLigneAvecPlusieursZeros(int[][] M) {
-        for (int i = 0; i < M.length; i++) {
-            int nombreDeZeros = 0;
-            for (int j = 0; j < M[0].length; j++) {
-                if (M[i][j] == 0) {
-                    nombreDeZeros++;
-                }
+    public static boolean ilExisteUneLigneAvecPlusieursZeros(int[][] M){
+        int c = 0;
+        boolean a = true;
+        int i = 0;
+        while (i < M.length && a) {
+            int j = 0;
+            while (j < M[0].length && a) {
+                if (M[i][j] == 0) c++;
+                j++;
             }
-            if (nombreDeZeros > 1) {
-                return true;
-            }
+            if (c > 1) a = false;
+            c = 0;
+            i++;
         }
-        return false;
+        return a;
     }
 }

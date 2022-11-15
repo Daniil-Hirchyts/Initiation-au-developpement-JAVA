@@ -5,22 +5,30 @@ public class CarréMagique {
      * rangée égale la somme des entiers de chaque colonne et la somme des
      * entiers de chacune des deux diagonales
      */
-    public static void remplirEnCarréMagique(int[][] M) {
-        int n = M.length;
-        int i = 0;
-        int j = n / 2;
-        int k = 1;
-        while (k <= n * n) {
-            M[i][j] = k;
-            k++;
-            int i1 = i;
-            int j1 = j;
-            i = (i - 1 + n) % n;
-            j = (j + 1) % n;
-            if (M[i][j] != 0) {
-                i = (i1 + 1) % n;
-                j = j1;
+    public static void remplirEnCarréMagique(int[][] tab) {
+        int l = 0;
+        int r = 0;
+        int tm = tab.length;
+        int tvm = tm * tm;
+        l = (tm - 1) / 2;
+        for (int i = 0; i < tm; i++) {
+            for (int j = 0; j < tm; j++) {
+                tab[i][j] = 0;
             }
+        }
+        for (int i = 0; i < tvm; i++) {
+            if (tab[r][l] == 0) {
+            } else {
+                if (r - 1 < 0) r = tm - 1;
+                else r = r - 1;
+                if (l - 1 < 0) l = tm - 1;
+                else l = l - 1;
+            }
+            tab[r][l] = i + 1;
+            if (l + 1 >= tm) l = 0;
+            else l = l + 1;
+            if (r - 1 < 0) r = tm - 1;
+            else r = r - 1;
         }
     }
 

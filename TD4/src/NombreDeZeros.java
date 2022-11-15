@@ -1,5 +1,11 @@
 public class NombreDeZeros {
 
+    /**
+     *
+     * Donnée : Une matrice M d'entiers
+     * Résultat : le nombre de 0
+     */
+
     public static int nombreDeZeros(int[][] M) {
         int nombreDeZeros = 0;
         for (int i = 0; i < M.length; i++) {

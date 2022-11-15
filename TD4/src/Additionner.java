@@ -9,4 +9,11 @@ public class Additionner {
         }
         return R;
     }
+
+    public static int as(int a) {
+        
+        return 0;
+    }
+
 }
+
