@@ -21,7 +21,7 @@ public class Date {
     public String toString() {
         String mois_t = switch (this.mois) {
             case 1 -> "janvier";
-            case 2 -> "fevrier";
+            case 2 -> "février";
             case 3 -> "mars";
             case 4 -> "avril";
             case 5 -> "mai";
@@ -31,7 +31,7 @@ public class Date {
             case 9 -> "septembre";
             case 10 -> "octobre";
             case 11 -> "novembre";
-            case 12 -> "decembre";
+            case 12 -> "décembre";
             default -> "";
         };
         return this.jour + " " + mois_t + " " + this.annee;
@@ -51,7 +51,7 @@ public class Date {
         }
     }
 
-    private void incrémenter() {
+    public void incrémenter() {
         if (this.jour == 31 && this.mois == 12) {
             this.jour = 1;
             this.mois = 1;
@@ -73,7 +73,7 @@ public class Date {
         }
     }
 
-    private boolean égale(Date d) {
+    public boolean égale(Date d) {
         return this.jour == d.jour && this.mois == d.mois && this.annee == d.annee;
     }
 

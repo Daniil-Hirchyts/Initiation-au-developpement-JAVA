@@ -1,20 +1,27 @@
 public class Arene {
 
+    private EE ensOrques;
+
     public Arene(int nbo) {
-        for (int i = 0; i < nbo; i++)
-            new Orque(this);
+        ensOrques = new EE(nbo);
+        for (int i = 0; i < nbo; i++) {
+            Orque orque = new Orque(this);
+            ensOrques.ajouter(orque.getId());
+        }
     }
 
     public int bataille() {
-        int nbOrques = Orque.nbOrques;
-        for (int i = 0; i < nbOrques - 1; i++) {
-            int id1 = Ut.randomMinMax(0, Orque.nbOrques - 1);
-            int id2 = Ut.randomMinMax(0, Orque.nbOrques - 1);
-            Orque o1 = Orque.tabOrques[id1];
-            Orque o2 = Orque.tabOrques[id2];
-            o1.combattre(o2);
+        while (ensOrques.getCardinal() > 1) {
+            int id1 = ensOrques.retraitEltAleatoirement();
+            int id2 = ensOrques.retraitEltAleatoirement();
+            Orque orque1 = Orque.getOrqueById(id1);
+            Orque orque2 = Orque.getOrqueById(id2);
+            int gagnant = orque1.combattre(orque2);
+            ensOrques.ajouter(gagnant);
         }
-        return Orque.tabOrques[0].getId();
+        return ensOrques.selectionElt();
     }
-
 }
+
+
+

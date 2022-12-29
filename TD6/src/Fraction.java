@@ -43,7 +43,7 @@ public class Fraction {
         this.denominateur /= pgcd;
     }
 
-    public Fraction fractionReduite () {
+    public Fraction fractionReduite() {
         Fraction f = new Fraction(this);
         f.reduire();
         return f;
@@ -70,7 +70,7 @@ public class Fraction {
     }
 
     public boolean égale(Fraction X) {
-        return this.numerateur == X.numerateur && this.denominateur == X.denominateur;
+        return this.numerateur * X.denominateur == X.numerateur * this.denominateur;
     }
 
     public boolean estIrréductible() {
