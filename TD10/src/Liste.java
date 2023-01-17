@@ -106,4 +106,45 @@ public class Liste {
         return somme;
     }
 
+    public int max() {
+        int max = Integer.MIN_VALUE;
+        Maillon courant = this.tete;
+        while (courant != null) {
+            if (courant.getVal() > max) max = courant.getVal();
+            courant = courant.getSuiv();
+        }
+        return max;
+    }
+
+    public int nombreDe(int n) {
+        int count = 0;
+        Maillon courant =  this.tete;
+        while (courant != null) {
+            if (courant.getVal() == n) count++;
+            courant = courant.getSuiv();
+        }
+        return count;
+    }
+
+    public boolean estCloneDe(Liste liste) {
+        if (this.longueur() != liste.longueur()) return false;
+        Maillon courantThis = this.tete;
+        Maillon courantListe = liste.tete;
+        while (courantThis != null) {
+            if (courantThis.getVal() != courantListe.getVal()) return false;
+            courantThis = courantThis.getSuiv();
+            courantListe = courantListe.getSuiv();
+        }
+        return true;
+    }
+
+    public void ajouterEnQueue(int n) {
+        if (this.estVide()) this.tete = new Maillon(n);
+        else {
+            Maillon courant = this.tete;
+            while (courant.getSuiv() != null) courant = courant.getSuiv();
+            courant.setSuiv(new Maillon(n));
+        }
+    }
+
 } // end class
