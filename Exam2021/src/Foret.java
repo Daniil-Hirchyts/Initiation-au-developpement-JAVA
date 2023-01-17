@@ -34,10 +34,7 @@ public class Foret {
     //Q10 - 2p
     public void coupeVieuxArbres(int nb) {
         for (int i = 0; i < nb; i++) {
-            int indiceVieux = 0;
-            for (int j = 1; j < this.nbArbres; j++)
-                if (this.tabArbre[j].ageDepasse(this.tabArbre[indiceVieux].getAge())) indiceVieux = j;
-            for (int j = indiceVieux; j < this.nbArbres - 1; j++) this.tabArbre[j] = this.tabArbre[j + 1];
+            for (int j = 0; j < this.nbArbres - 1; j++) this.tabArbre[j] = this.tabArbre[j + 1];
             this.nbArbres--;
         }
     }
@@ -45,8 +42,7 @@ public class Foret {
     //Q11 - 2p
     private int nbArbresLimite (int limite) {
         int nb = 0;
-        for (int i = 0; i < this.nbArbres; i++)
-            if (this.tabArbre[i].getAge() >= limite) nb++;
+        for (int i = 0; i < this.nbArbres; i++) if (this.tabArbre[i].ageDepasse(limite)) nb++;
         return nb;
     }
 

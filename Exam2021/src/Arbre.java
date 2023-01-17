@@ -24,7 +24,4 @@ public class Arbre {
         return this.age >= limite;
     }
 
-    public int getAge() {
-        return this.age;
-    }
 }
